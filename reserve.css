@@ -1,0 +1,260 @@
+@font-face{
+font-family: lcars;
+src: url('Swiss 911 Ultra Compressed.ttf');
+}
+
+#dashboard
+{
+width:100%;
+height:300px;
+background:linear-gradient(to left, #6688CC 20%, #000000 80%);
+}
+body
+{
+margin:0px;
+background:#000000;
+}
+#leftdash
+{
+float:left;
+width:150px;
+height:300px;
+border-bottom-left-radius:75px;
+}
+#rightdash
+{
+float:left;
+background:#000000;
+}
+#botdash
+{
+height:30px;
+margin-left: 150px;
+width: 100%;
+padding-top: 270px;
+}
+#dashcontentwrap
+{
+float:left;
+height:270px;
+position:absolute;
+margin-left:150px;
+width:100%;
+background:#000000;
+border-bottom-left-radius: 37.5px;
+}
+
+#mainareawrap
+{
+width:100%;
+height:480px;
+background:#000;
+}
+
+#navpane
+{
+float:left;
+height:475px;
+width:150px;
+border-top:5px solid #000;
+border-top-left-radius:75px;
+}
+#mainupper
+{
+height:30px;
+margin-left: 150px;
+width: 100%;
+border-top:5px solid #000;
+}
+
+#maincontentwrap
+{
+height:445px;
+width: 100%;
+border-top-left-radius:37.5;
+background:#000;
+overflow-y: auto;
+border-top: 5px solid #000;
+}
+
+#navbuttons
+{
+margin-top:120px;
+width:150px;
+height:300;
+}
+
+#navbuttons li
+{
+border-top:5px solid #000;
+height:60px;
+}
+
+#expand
+{
+font-family:lcars;
+font-size:25;
+cursor:pointer;
+}
+
+#expand div{margin: 30 5 5 0; float:right}
+
+#shipman
+{
+font-family:lcars;
+font-size:25;
+cursor:pointer;
+}
+
+#shipman div{margin: 30 5 5 0; float:right}
+
+#logout
+{
+font-family:lcars;
+font-size:25;
+cursor:pointer;
+}
+#logout div{margin: 30 5 5 0; float:right}
+
+/* For shipman.php */
+
+.innerlist
+{
+margin: 60 0 0 60;
+}
+
+.innerlist li
+{
+width:375px;
+height:240px;
+float:left;
+border-radius:37.5;
+margin:0 10px 10px 0;
+cursor:pointer;
+}
+
+.listpart
+{
+width: 300px;
+height: 180px;
+border-radius: 37.5;
+background: #000;
+position: relative;
+top: 20;
+left: 37.5;
+}
+
+.smtext
+{
+width: 100%;
+text-align: center;
+position: relative;
+top: 20;
+font-family:lcars;
+color:#000;
+font-size:25;
+}
+
+.innerlist li div img
+{
+display: block;
+margin: auto;
+position: relative;
+top: 10px;
+}
+
+
+.innerlist li span
+{
+background:#000;
+height:5px;
+width:100%;
+display:inline-block;
+position: relative;
+top: 60;
+}
+
+/* non-hoverable */
+.lclblue{background:#4455BB;} 
+.lcdblue{background:#9977AA}
+.lcpurple{background:#774466}
+.lcorange{background:#DD6644}
+.lcobrown{background:#AA5533}
+.lcbrown{background:#BB6622}
+.lctan{background:#EE9955}
+.lctext{background:#CCDDEE}
+
+/* Hoverable */
+.lclblueh{background:#4455BB;} 
+.lcdblueh{background:#9977AA}
+.lcpurpleh{background:#774466}
+.lcorangeh{background:#DD6644}
+.lcobrownh{background:#AA5533}
+.lcbrownh{background:#BB6622}
+.lctanh{background:#EE9955}
+
+.lclblueh:hover{background:#6776CF}
+.lcpurpleh:hover{background:#916081}
+.lcdblueh:hover{background:#B091BF}
+.lcorangeh:hover{background:#E8876B}
+.lcobrownh:hover{background:#BD7355}
+.lcbrownh:hover{background:#BF7E4B}
+.lctanh:hover{background:#EDAD79}
+
+.text1
+{
+font-family:lcars;
+color:#CCDDEE;
+font-size:60;
+}
+
+.text2
+{
+font-family:lcars;
+color:#CCDDEE;
+font-size:40;
+}
+
+.text3
+{
+font-family:lcars;
+color:#CCDDEE;
+font-size:20;
+}
+
+
+
+::-webkit-scrollbar-track
+{
+background-color: #0;
+}
+
+::-webkit-scrollbar
+{
+height: 10px;
+width: 10px;
+background-color: #0;
+background:transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+background-color: #4455BB; 
+border: 2px solid #000;
+border-radius: 100px;
+}
+
+::-webkit-scrollbar-corner
+{
+background-color: #000;
+}
+
+ul
+{
+list-style-type: none;
+-webkit-margin-before: 0em;
+-webkit-margin-after: 0em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 0px;
+}

@@ -1,0 +1,99 @@
+@font-face{
+font-family: lcars;
+src: url('../Swiss 911 Ultra Compressed.ttf');
+}
+
+#topbar
+{
+width:95%;
+height:40px;
+margin-top:40px;
+border-radius:40px;
+margin-left:auto;
+margin-right:auto;
+}
+
+#mainarea
+{
+height:80%;
+width:100%;
+overflow:hidden;
+}
+
+.text1
+{
+font-family:lcars;
+color:#CCDDEE;
+font-size:40;
+}
+
+#fedlogo{
+    display: block;
+    margin: auto;
+	width:459;
+	height:385.5;
+}
+
+#toptext
+{
+width: 310px;
+float: right;
+padding-left: 10;
+margin-right: 50px;
+}
+
+#bottext
+{
+background:#000;
+margin-left:50px;
+padding-left: 10;
+position: absolute;
+padding-right:10px;
+}
+
+#login
+{
+background: #000;
+height: 50px;
+width: 100px;
+margin: 20px auto 0 auto;
+display: block;
+border: 2px solid #FFF;
+color: #CCDDEE;
+opacity:.4;
+text-align: center;
+font-size: 45;
+font-family: lcars;
+cursor:pointer;
+}
+
+#login:hover
+{
+opacity:1;
+}
+
+.userpass
+{
+margin: 20px auto 0 auto;
+background: #000;
+display: block;
+color: #CCDDEE;
+text-align: center;
+font-size: 30;
+font-family: lcars;
+}
+
+.lclblue{background:#4455BB;}
+.lcdblue{background:#9977AA}
+.lcpurple{background:#774466}
+.lcorange{background:#DD6644}
+.lcobrown{background:#AA5533}
+.lcbrown{background:#BB6622}
+.lctan{background:#EE9955}
+.lctext{background:#CCDDEE}
+
+body
+{
+margin:0px;
+background:#000000;
+}
