@@ -3,6 +3,85 @@ font-family: lcars;
 src: url('Swiss 911 Ultra Compressed.ttf');
 }
 
+#infopane
+{
+position: fixed;
+width: 900px;
+height: 600px;
+border-radius: 75px;
+z-index: 5;
+left:50%;
+top: 50%;
+margin: -300 0 0 -450;
+border: 5px solid #000;
+display:none;
+}
+
+#innerinfo
+{
+position: relative;
+height: 530px;
+width: 665px;
+background: #000;
+border-radius: 75px;
+top: 30px;
+left: 75px;
+overflow: auto;
+text-align: center;
+border: 5px solid #000;
+}
+
+#desctext
+{
+padding: 0 10 0 10;
+}
+
+#infoname
+{
+position:relative;
+top: -217;
+left: 150;
+background: #000;
+border-left: 5px solid #000;
+border-right: 5px solid #000;
+}
+
+#infonav
+{
+position:relative;
+height: 240px;
+width: 150px;
+top: -300;
+left: 750;
+}
+
+#infonav li
+{
+height: 60px;
+width: 150px;
+border-top: 5px solid #000;
+cursor:pointer;
+font-family:lcars;
+font-size:25;
+}
+
+#infonav li div
+{
+margin: 30 5 5 0; float:right
+}
+
+#overlay{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  opacity:0.6;
+  z-index:4;
+  display:none;
+  background: #000;
+}
+
 #dashboard
 {
 width:100%;

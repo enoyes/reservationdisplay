@@ -17,7 +17,7 @@
 		
 		$rand = mt_rand(0, 6);
 		
-		echo "<li class=".$colorarr[$rand].">
+		echo "<li id='".$shiprow["S_Id"]."' class=".$colorarr[$rand].">
 			<span /> 
 			<span style='top:180' /> 
 			<div class='listpart'> 
@@ -37,3 +37,21 @@
 	</ul>
 
 </body>
+
+<script>
+$(document).ready(function(){
+addsmevents();
+
+});
+function addsmevents(){
+	$("#list1 li").click(function(){ 
+	var member = $(this);
+	$("#innerinfo").load("shipman/moreshipinfo.php?shipid=" + member.attr('id'), 
+															function(){	
+																		$("#infopane").attr('class', member.attr('class').replace("h", ""));
+																		toggleinfo();
+																		}) 
+									});
+}
+
+</script>

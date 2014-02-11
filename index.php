@@ -7,6 +7,18 @@
 </head>
 
 <body>
+	<div id="overlay"> </div>
+	<div id="infopane" class="lcorange">
+		
+		<div id="innerinfo"> </div> 
+		<ul id="infonav">
+			<li id="r" class="lcpurpleh"> </li>
+			<li id="reserve" class="lclblueh"> </li>
+			<li id="e" class="lcdblueh"> </li>
+			<li id="infoexit" class="lctanh" style="border-bottom:5px solid #000"> <div>Close</div> </li>
+		</ul>
+		
+	</div>
 	<div id="dashboard">
 		<div id="leftdash" class="lclblue"> 
 			<div class="lcdblue" style="height:180px;border-bottom:5px solid #000000;"> </div>
@@ -51,6 +63,7 @@
 
 <script>
 var hiddendash = 1;
+var infopane = 0;
 $(document).ready(function(){
 	blinkag();
 	setTimeout(loaddash, 5000);
@@ -100,6 +113,28 @@ function addevents(){
 	$("#logout").click(function(){
 		logout();
 	});
+	
+	$("#infoexit").click(function(){ toggleinfo() });
+}
+
+
+
+function toggleinfo(){
+	if (infopane === 0){
+		$("#infopane").show();
+		$("#overlay").show();
+		infopane = 1;
+	}
+	else{
+	$("#infopane").hide();
+	$("#overlay").hide();
+		infopane = 0;
+	}
+}
+
+function loadinfo(list)
+{
+	$("#innerinfo").load("shipman/moreshipinfo.php");
 }
 
 function logout(){
