@@ -17,13 +17,16 @@ $shipid = $_GET["shipid"];
 
 <?php
 
-$q = "select * from ship_info where S_Id = $shipid";
+$q = "select * from ship_info where s_id = $shipid";
 $result = mysqli_query($con, $q);
 $result = mysqli_fetch_array($result);
 
-echo 	"<img src='shipman/shipimg/".$result["Ship_Img"].".jpg' width='500' height='280'> </img>
-		 <h1 class='text1'>".$result["Ship_Name"]."</h1>
-		 <h2 id='desctext' class='text3'>".$result["Ship_Desc"]."</h2>";
+echo 	"<img src='shipman/shipimg/".$result["s_img"].".jpg' width='500' height='280'> </img>
+		 <h1 class='text1'>".$result["s_name"]."</h1>
+		 <h2 class='text2' style='font-size:50'>".$result["s_class"]." Class</h2>
+		 <h2 class='text2'>Price: ".$result["s_price"]." Credits/Day</h2>
+		 <h2 class='text2'>Reputation: ".$result["s_rep"]." Credits</h2>
+		 <h2 id='desctext' class='text3'>".$result["s_desc"]."</h2>";
 ?>						
 
 </body>

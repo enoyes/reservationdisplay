@@ -17,14 +17,14 @@
 		
 		$rand = mt_rand(0, 6);
 		
-		echo "<li id='".$shiprow["S_Id"]."' class=".$colorarr[$rand].">
+		echo "<li id='".$shiprow["s_id"]."' class=".$colorarr[$rand].">
 			<span /> 
 			<span style='top:180' /> 
 			<div class='listpart'> 
-				<img src=shipman/shipimg/".$shiprow["Ship_Img"].".jpg width='250' height='140' />
+				<img src=shipman/shipimg/".$shiprow["s_img"].".jpg width='250' height='140' />
 				
 			</div> 
-			<div class='smtext'>".$shiprow["Ship_Name"]."</div>
+			<div class='smtext'>".$shiprow["s_name"]."</div>
 		</li>";
 	
 		}
@@ -49,6 +49,7 @@ function addsmevents(){
 	$("#innerinfo").load("shipman/moreshipinfo.php?shipid=" + member.attr('id'), 
 															function(){	
 																		$("#infopane").attr('class', member.attr('class').replace("h", ""));
+																		$("#infopane").data('id', member.attr('id'));
 																		toggleinfo();
 																		}) 
 									});

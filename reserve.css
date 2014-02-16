@@ -23,7 +23,7 @@ position: relative;
 height: 530px;
 width: 665px;
 background: #000;
-border-radius: 75px;
+border-radius: 75 0 0 75;
 top: 30px;
 left: 75px;
 overflow: auto;
@@ -34,6 +34,7 @@ border: 5px solid #000;
 #desctext
 {
 padding: 0 10 0 10;
+font-size: 30;
 }
 
 #infoname
@@ -69,6 +70,48 @@ font-size:25;
 {
 margin: 30 5 5 0; float:right
 }
+
+#reschecker
+{
+height: 40;
+width: 525;
+
+display: inline-block;
+margin: 30 0 0 0;
+
+}
+
+#resulttext
+{
+border: 3 solid;
+float: right;
+width: 363;
+height: 40;
+opacity: .4;
+}
+
+#checkbutton
+{
+height: 40;
+width: 150;
+border: 3 solid;
+float: left;
+cursor:pointer;
+opacity:.4;
+}
+#checkbutton:hover{opacity:1;}
+
+#paybutton
+{
+height: 40;
+width: 150;
+border: 3 solid;
+display: inline-block;
+margin: 30 0 0 0;
+opacity:.4;
+cursor:pointer;
+}
+#paybutton:hover{opacity:1;}
 
 #overlay{
   position:fixed;
@@ -301,7 +344,15 @@ color:#CCDDEE;
 font-size:20;
 }
 
-
+.datefields
+{
+margin: 20px auto 0 auto;
+background: #000;
+color: #CCDDEE;
+text-align: center;
+font-size: 30;
+font-family: lcars;
+}
 
 ::-webkit-scrollbar-track
 {

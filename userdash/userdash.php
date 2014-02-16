@@ -3,7 +3,7 @@
 <?php session_start(); ?>
 </head>
 <?php
-$q = "select credits, reputation from memberinfo where u_id = ".$_SESSION['uid'];
+$q = "select credits, reputation from member_info where u_id = ".$_SESSION['uid'];
 $result = mysqli_query($con, $q);
 $result = mysqli_fetch_array($result);
 

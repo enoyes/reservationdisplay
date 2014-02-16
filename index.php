@@ -1,4 +1,6 @@
-<?php include "login/islog.php" ?>
+<?php include "login/islog.php"; ?>
+<?php require_once "phpclass/procedure.class.php"; ?>
+
 <head>
 	<link rel="stylesheet" href="reserve.css" media="screen"/>
 	<link rel="shortcut icon" href="http://ernoyes.com/images/engineering.png" />
@@ -12,8 +14,8 @@
 		
 		<div id="innerinfo"> </div> 
 		<ul id="infonav">
-			<li id="r" class="lcpurpleh"> </li>
-			<li id="reserve" class="lclblueh"> </li>
+			<li id="infoinfo" class="lcpurpleh"><div>Info</div></li>
+			<li id="inforeserve" class="lclblueh"> <div>Reserve</div> </li>
 			<li id="e" class="lcdblueh"> </li>
 			<li id="infoexit" class="lctanh" style="border-bottom:5px solid #000"> <div>Close</div> </li>
 		</ul>
@@ -115,6 +117,19 @@ function addevents(){
 	});
 	
 	$("#infoexit").click(function(){ toggleinfo() });
+	
+	$("#inforeserve").click(function(){
+	
+		$("#innerinfo").load("shipman/shipres.php?shipid=" + $("#infopane").data('id'));
+	
+	});
+	
+	$("#infoinfo").click(function(){
+	
+		$("#innerinfo").load("shipman/moreshipinfo.php?shipid=" + $("#infopane").data('id'));
+	
+	});
+	
 }
 
 
@@ -132,10 +147,7 @@ function toggleinfo(){
 	}
 }
 
-function loadinfo(list)
-{
-	$("#innerinfo").load("shipman/moreshipinfo.php");
-}
+
 
 function logout(){
 	$.get("login/logout.php", 
