@@ -8,7 +8,7 @@ $sdate = $_POST['sdate'];
 $edate = $_POST['edate'];
 $uid = $_SESSION['uid'];
 
-
+date_default_timezone_set('America/New_York');
 if ($sdate == "" || $edate == ""){
 	echo -1;
 	exit;
@@ -17,6 +17,8 @@ else if ($edate < $sdate){
 	echo -2;
 	exit;
 }
+
+
 else if ($sdate < date("Y-m-d")){
 	echo -3;
 	exit;

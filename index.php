@@ -44,7 +44,7 @@
 			<ul id="navbuttons">
 				<li id="expand" class="lcorangeh"> <div>Hide Dashboard</div></li>
 				<li id="shipman" class="lcdblueh"> <div>Ship Manifest</div> </li>
-				<li class="lclblue"> </li>
+				<li id="currentres" class="lclblueh"> <div>Current Reservations</div> </li>
 				<li id="logout" class="lctanh" style="border-bottom:5px solid black"> <div>Logout</div> </li>
 				
 			</ul>
@@ -88,6 +88,10 @@ function loadman(){
 	$("#maincontentwrap").load("shipman/shipman.php");
 }
 
+function loadcurres(){
+	$("#maincontentwrap").load("currentres/currentres.php");
+}
+
 function addevents(){
 	$("#expand").click(function(){
 		if(hiddendash == 1){
@@ -129,6 +133,8 @@ function addevents(){
 		$("#innerinfo").load("shipman/moreshipinfo.php?shipid=" + $("#infopane").data('id'));
 	
 	});
+	
+	$("#currentres").click(loadcurres);
 	
 }
 
