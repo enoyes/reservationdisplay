@@ -16,7 +16,7 @@
 		<ul id="infonav">
 			<li id="infoinfo" class="lcpurpleh"><div>Info</div></li>
 			<li id="inforeserve" class="lclblueh"> <div>Reserve</div> </li>
-			<li id="e" class="lcdblueh"> </li>
+			<li id="infocurres" class="lcdblueh"><div>Current Reservations</div> </li>
 			<li id="infoexit" class="lctanh" style="border-bottom:5px solid #000"> <div>Close</div> </li>
 		</ul>
 		
@@ -67,6 +67,7 @@
 var hiddendash = 1;
 var infopane = 0;
 $(document).ready(function(){
+	loadman();
 	blinkag();
 	setTimeout(loaddash, 5000);
 
@@ -131,6 +132,12 @@ function addevents(){
 	$("#infoinfo").click(function(){
 	
 		$("#innerinfo").load("shipman/moreshipinfo.php?shipid=" + $("#infopane").data('id'));
+	
+	});
+	
+	$("#infocurres").click(function(){
+	
+		$("#innerinfo").load("shipman/shipcurres.php?shipid=" + $("#infopane").data('id'));
 	
 	});
 	
