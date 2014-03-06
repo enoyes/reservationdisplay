@@ -3,6 +3,115 @@ font-family: lcars;
 src: url('../Swiss 911 Ultra Compressed.ttf');
 }
 
+
+#infopane
+{
+position: fixed;
+width: 900px;
+height: 600px;
+border-radius: 75px;
+z-index: 5;
+left:50%;
+top: 50%;
+margin: -300 0 0 -450;
+border: 5px solid #000;
+display:none;
+}
+
+#innerinfo
+{
+position: relative;
+height: 530px;
+width: 665px;
+background: #000;
+border-radius: 75 0 0 75;
+top: 30px;
+left: 75px;
+overflow: auto;
+text-align: center;
+border: 5px solid #000;
+}
+
+#desctext
+{
+padding: 0 10 0 10;
+font-size: 30;
+}
+
+#infoname
+{
+position:relative;
+top: -217;
+left: 150;
+background: #000;
+border-left: 5px solid #000;
+border-right: 5px solid #000;
+}
+
+#infonav
+{
+position:relative;
+height: 240px;
+width: 150px;
+top: -300;
+left: 750;
+}
+
+#infonav li
+{
+height: 60px;
+width: 150px;
+border-top: 5px solid #000;
+cursor:pointer;
+font-family:lcars;
+font-size:25;
+}
+
+#infonav li div
+{
+margin: 30 5 5 0; float:right
+}
+
+#reschecker
+{
+height: 40;
+width: 525;
+display: inline-block;
+margin: 30 0 0 0;
+}
+
+#resulttext
+{
+border: 3 solid;
+float: right;
+width: 363;
+height: 40;
+opacity: .4;
+}
+
+#checkbutton
+{
+height: 40;
+width: 150;
+border: 3 solid;
+float: left;
+cursor:pointer;
+opacity:.4;
+}
+#checkbutton:hover{opacity:1;}
+
+#overlay{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  opacity:0.6;
+  z-index:4;
+  display:none;
+  background: #000;
+}
+
 #topbar
 {
 width:95%;
@@ -21,6 +130,12 @@ overflow:hidden;
 }
 
 .text1
+{
+font-family:lcars;
+color:#CCDDEE;
+font-size:40;
+}
+.text2
 {
 font-family:lcars;
 color:#CCDDEE;
@@ -51,13 +166,13 @@ position: absolute;
 padding-right:10px;
 }
 
-#login
+.loginbuttons
 {
 background: #000;
 height: 50px;
 width: 100px;
-margin: 20px auto 0 auto;
-display: block;
+margin: 20px 5px 0 auto;
+display: inline-block;
 border: 2px solid #FFF;
 color: #CCDDEE;
 opacity:.4;
@@ -67,9 +182,21 @@ font-family: lcars;
 cursor:pointer;
 }
 
-#login:hover
+.loginbuttons:hover
 {
 opacity:1;
+}
+
+#overlay{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  opacity:0.6;
+  z-index:4;
+  display:none;
+  background: #000;
 }
 
 .userpass
@@ -77,6 +204,17 @@ opacity:1;
 margin: 20px auto 0 auto;
 background: #000;
 display: block;
+color: #CCDDEE;
+text-align: center;
+font-size: 30;
+font-family: lcars;
+}
+
+.newuserfields
+{
+margin: 20px auto 0 20px;
+background: #000;
+display: inline-block;
 color: #CCDDEE;
 text-align: center;
 font-size: 30;
@@ -91,6 +229,33 @@ font-family: lcars;
 .lcbrown{background:#BB6622}
 .lctan{background:#EE9955}
 .lctext{background:#CCDDEE}
+
+.lclblueh{background:#4455BB;} 
+.lcdblueh{background:#9977AA}
+.lcpurpleh{background:#774466}
+.lcorangeh{background:#DD6644}
+.lcobrownh{background:#AA5533}
+.lcbrownh{background:#BB6622}
+.lctanh{background:#EE9955}
+
+.lclblueh:hover{background:#6776CF}
+.lcpurpleh:hover{background:#916081}
+.lcdblueh:hover{background:#B091BF}
+.lcorangeh:hover{background:#E8876B}
+.lcobrownh:hover{background:#BD7355}
+.lcbrownh:hover{background:#BF7E4B}
+.lctanh:hover{background:#EDAD79}
+
+
+ul
+{
+list-style-type: none;
+-webkit-margin-before: 0em;
+-webkit-margin-after: 0em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 0px;
+}
 
 body
 {

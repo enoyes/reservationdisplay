@@ -50,13 +50,14 @@ public function get_cur_reserve($sid){
 public function add_reservation($uid, $sid, $sdate, $edate){
 
 // Get the amount of credits the user has
-$q = "SELECT s_price FROM ship_info WHERE s_id = $sid";
+$q = "SELECT s_price, s_name FROM ship_info WHERE s_id = $sid";
 $result = mysqli_query($this->con, $q);
 $price = mysqli_fetch_array($result);
 $price = $price['s_price'];
+$name = $price['s_name'];
 
 // Get the price of the ship
-$q = "SELECT credits FROM member_info WHERE member_info.u_id = $uid";
+$q = "SELECT credits FROM members WHERE u_id = $uid";
 $result = mysqli_query($this->con, $q);
 $credits = mysqli_fetch_array($result);
 $credits = $credits['credits'];
@@ -70,11 +71,18 @@ $price = $diff * $price;
 
 $newcredits = $credits - $price;
 
-$q = "UPDATE member_info SET credits = $newcredits WHERE member_info.u_id = $uid;";
+$q = "UPDATE members SET credits = $newcredits WHERE u_id = $uid;";
 mysqli_query($this->con, $q);
 
 $q = "INSERT INTO ship_reservations VALUES (NULL, $sid, $uid, '$sdate', '$edate', $price)";
 mysqli_query($this->con, $q);
+
+$q = "SELECT email FROM members WHERE u_id = $uid";
+$result = mysqli_query($this->con, $q);
+$to = $result['email'];
+$subject = "Reservation for the $name from $sdate to $edate";
+$message = "Thank you for your business, please bring our ships back in one piece!";
+mail("$to", $subject, $message) or die("Message to $to with the subject $subject didn't work!");
 }
 
 
@@ -82,12 +90,12 @@ mysqli_query($this->con, $q);
 // Checks the availability of a ship at a given time by a given user
 public function check_avail($uid, $sid, $sdate, $edate){
 
-$q = "SELECT credits FROM member_info WHERE member_info.u_id = $uid";
+$q = "SELECT credits FROM members WHERE u_id = $uid";
 $result = mysqli_query($this->con, $q);
 $credits = mysqli_fetch_array($result);
 $credits = $credits['credits'];
 
-$q = "SELECT reputation FROM member_info WHERE member_info.u_id = $uid";
+$q = "SELECT reputation FROM members WHERE u_id = $uid";
 $result = mysqli_query($this->con, $q);
 $reputation = mysqli_fetch_array($result);
 $reputation = $reputation['reputation'];
@@ -124,6 +132,21 @@ else if ($inuse > 0){$return = 3;} // User is reserving a ship at those times
 else {$return = 0;}
 
 return $return;
+}
+
+public function add_user($user, $pass, $first, $last, $email){
+
+$initial_credits = 100000;
+
+$q = "SELECT * FROM members m WHERE m.username = '$user'";
+$result = mysqli_query($this->con, $q) or die(mysqli_error($this->con));
+if(mysqli_num_rows($result) > 0){
+	return -1; //Username Taken
+}
+$q = "INSERT INTO members VALUES ('$user', '$pass', '$first', '$last',NULL,'$email', $initial_credits, NULL, 0)";
+mysqli_query($this->con, $q) or die(mysqli_error($this->con)); 
+
+
 }
 
 }

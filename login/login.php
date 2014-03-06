@@ -1,7 +1,7 @@
 <?php include '../phplogins/phplogin.php';
 
-$getuser = $_GET["user"];
-$getpass = $_GET["pass"];
+$getuser = $_POST["user"];
+$getpass = $_POST["pass"];
 //$getuser = stripslashes($getuser);
 //$getpass = stripslashes($getpass);
 //$getuser = mysql_real_escape_string($getuser);

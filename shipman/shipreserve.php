@@ -34,6 +34,7 @@ if ($error == 0){
 	
 	$proc->add_reservation($uid, $sid, $sdate, $edate);
 	
+	
 	echo 0;
 	exit;
 }

@@ -7,7 +7,6 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 	<title> Reservations </title>
 </head>
-
 <body>
 	<div id="overlay"> </div>
 	<div id="infopane" class="lcorange">
