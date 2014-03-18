@@ -3,7 +3,7 @@
 <?php session_start(); ?>
 </head>
 <?php
-$q = "select credits, reputation from members where u_id = ".$_SESSION['uid'];
+$q = "select credits, reputation, email from members where u_id = ".$_SESSION['uid'];
 $result = mysqli_query($con, $q);
 $result = mysqli_fetch_array($result);
 
@@ -19,5 +19,8 @@ $result = mysqli_fetch_array($result);
 	<div style="height:80;">
 		<div class="text1" style="margin:0 0 0 10;display:block;float:left">Available Credits: <?php echo $result["credits"]; ?></div>
 		<div class="text1" style="margin:0 30% 0 0;display:block;float:right;">Reputation: <?php echo $result["reputation"]; ?></div>
+	</div>
+	<div style="height:80;">
+		<div class="text1" style="margin:0 0 0 10;display:block;float:left">Email: <?php echo $result["email"]; ?></div>
 	</div>
 </body>

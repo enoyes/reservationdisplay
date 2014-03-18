@@ -56,7 +56,9 @@ function checkRes(){
 	var edate = $('#enddate').val();
 	var sdate = $('#startdate').val();
 	var cdate = new Date();
-	var cdate = cdate.getFullYear().toString() + "-0" + (cdate.getMonth() + 1).toString() + "-" + cdate.getDate().toString();
+	var year = cdate.getFullYear();
+	var date = cdate.getDate();
+	var cdate = year.toString() + "-0" + (cdate.getMonth() + 1).toString() + "-" + (date<10 ? "0" : "") + date.toString();
 	if(edate == "" || sdate == ""){
 		$('#resulttext').html("Select valid start and end dates!").css('opacity', '1');
 	}

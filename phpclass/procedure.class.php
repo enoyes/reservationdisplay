@@ -52,9 +52,9 @@ public function add_reservation($uid, $sid, $sdate, $edate){
 // Get the amount of credits the user has
 $q = "SELECT s_price, s_name FROM ship_info WHERE s_id = $sid";
 $result = mysqli_query($this->con, $q);
-$price = mysqli_fetch_array($result);
-$price = $price['s_price'];
-$name = $price['s_name'];
+$result = mysqli_fetch_array($result);
+$price = $result['s_price'];
+$name = $result['s_name'];
 
 // Get the price of the ship
 $q = "SELECT credits FROM members WHERE u_id = $uid";
@@ -74,11 +74,12 @@ $newcredits = $credits - $price;
 $q = "UPDATE members SET credits = $newcredits WHERE u_id = $uid;";
 mysqli_query($this->con, $q);
 
-$q = "INSERT INTO ship_reservations VALUES (NULL, $sid, $uid, '$sdate', '$edate', $price)";
+$q = "INSERT INTO ship_reservations VALUES ($sid, $uid, '$sdate', '$edate', $price)";
 mysqli_query($this->con, $q);
 
 $q = "SELECT email FROM members WHERE u_id = $uid";
 $result = mysqli_query($this->con, $q);
+$result = mysqli_fetch_array($result);
 $to = $result['email'];
 $subject = "Reservation for the $name from $sdate to $edate";
 $message = "Thank you for your business, please bring our ships back in one piece!";
